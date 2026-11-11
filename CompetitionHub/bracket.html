@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Турнирная сетка и таблица матчей соревнований" name="description"/>
+  <meta content="#10172b" name="theme-color"/>
+  <title>
+   Турнирная сетка — CompetitionHub
+  </title>
+  <link href="images/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/custom.css" rel="stylesheet"/>
+ </head>
+ <body class="d-flex flex-column min-vh-100" data-page="bracket">
+  <a class="skip-link" href="#main-content">
+   Перейти к содержимому
+  </a>
+  <nav aria-label="Основная навигация" class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top">
+   <div class="container py-2">
+    <a aria-label="CompetitionHub — главная" class="navbar-brand d-inline-flex align-items-center gap-2" href="index.html">
+     <img alt="" class="brand-icon" height="34" src="images/mark.svg" width="34"/>
+     <span>
+      COMPETITION
+      <span class="brand-accent">
+       HUB
+      </span>
+     </span>
+    </a>
+    <button aria-controls="mainNavbar" aria-expanded="false" aria-label="Открыть меню" class="navbar-toggler border-0" data-bs-target="#mainNavbar" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+     <ul class="navbar-nav align-items-lg-center gap-lg-1 main-navigation ms-lg-4">
+      <li class="nav-item">
+       <a class="nav-link" href="index.html">
+        Главная
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="catalog.html">
+        Соревнования
+       </a>
+      </li>
+      <li class="nav-item">
+       <a aria-current="page" class="nav-link active" href="bracket.html">
+        Турнирная сетка
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="rating.html">
+        Рейтинг
+       </a>
+      </li>
+     </ul>
+     <a class="btn btn-outline-light btn-sm px-3 ms-lg-auto profile-entry" href="profile.html">
+      Личный кабинет
+     </a>
+    </div>
+   </div>
+  </nav>
+  <main id="main-content">
+   <section class="page-heading">
+    <div class="container py-5">
+     <span class="eyebrow text-white-50">
+      ПУТЬ К ПОБЕДЕ
+     </span>
+     <h1 class="display-5 fw-bold text-white mb-2">
+      Турнирная сетка
+     </h1>
+     <p class="text-white-50 mb-0">
+      Следи за этапами и участниками соревнований.
+     </p>
+    </div>
+   </section>
+   <div class="container section-space">
+    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-4">
+     <div>
+      <label class="form-label fw-semibold" for="bracketCompetition">
+       Выбери соревнование
+      </label>
+      <select class="form-select bracket-select" id="bracketCompetition">
+      </select>
+     </div>
+    </div>
+    <section class="bracket-intro row g-4 align-items-center mb-4">
+     <div class="col-lg-7">
+      <div class="section-kicker">
+       ПЛЕЙ-ОФФ
+      </div>
+      <h2 class="h3 fw-bold">
+       От первого раунда до финала
+      </h2>
+      <p class="text-secondary mb-0">
+       После отборочного этапа восемь участников получают места в сетке. Победитель каждого матча проходит дальше — до решающей встречи.
+      </p>
+     </div>
+     <div class="col-lg-5">
+      <img alt="Схема трёх этапов турнира" class="img-fluid bracket-cover" src="images/bracket-hero.svg"/>
+     </div>
+    </section>
+    <div class="row g-3 mb-4" id="bracketStats">
+     <div class="col-sm-4">
+      <div class="stat-tile">
+       <strong id="bracketParticipants">
+        8
+       </strong>
+       <span>
+        мест в плей-офф
+       </span>
+      </div>
+     </div>
+     <div class="col-sm-4">
+      <div class="stat-tile">
+       <strong id="bracketMatches">
+        7
+       </strong>
+       <span>
+        матчей до победы
+       </span>
+      </div>
+     </div>
+     <div class="col-sm-4">
+      <div class="stat-tile">
+       <strong id="bracketStage">
+        Ожидается
+       </strong>
+       <span>
+        статус сетки
+       </span>
+      </div>
+     </div>
+    </div>
+    <div class="bracket-board" id="bracketBoard">
+    </div>
+    <section aria-labelledby="bracketLegend" class="mt-5">
+     <h2 class="h4 fw-bold mb-3" id="bracketLegend">
+      Как устроена сетка
+     </h2>
+     <div class="row g-3">
+      <div class="col-md-4">
+       <div class="mini-info h-100">
+        <span class="mini-info-number">
+         01
+        </span>
+        <h3 class="h6 fw-bold">
+         Четвертьфинал
+        </h3>
+        <p class="text-secondary mb-0 small">
+         Восемь участников соревнуются в четырёх матчах.
+        </p>
+       </div>
+      </div>
+      <div class="col-md-4">
+       <div class="mini-info h-100">
+        <span class="mini-info-number">
+         02
+        </span>
+        <h3 class="h6 fw-bold">
+         Полуфинал
+        </h3>
+        <p class="text-secondary mb-0 small">
+         Победители проходят в следующую стадию.
+        </p>
+       </div>
+      </div>
+      <div class="col-md-4">
+       <div class="mini-info h-100">
+        <span class="mini-info-number">
+         03
+        </span>
+        <h3 class="h6 fw-bold">
+         Финал
+        </h3>
+        <p class="text-secondary mb-0 small">
+         Два финалиста борются за первое место.
+        </p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section aria-labelledby="bracket-notes" class="mt-5">
+     <div class="row g-4 align-items-center">
+      <div class="col-lg-7">
+       <div class="p-4 border rounded-3">
+        <h2 class="h4 fw-bold mb-3" id="bracket-notes">
+         Регламент плей-офф
+        </h2>
+        <p class="text-secondary mb-3">
+         Каждый матч проводится на выбывание. При равном счёте формат определения победителя устанавливает организатор турнира.
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+         <span class="badge text-bg-light border">
+          Четвертьфинал
+         </span>
+         <span class="badge text-bg-light border">
+          Полуфинал
+         </span>
+         <span class="badge text-bg-light border">
+          Финал
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="col-lg-5">
+       <a class="btn btn-outline-primary w-100" href="catalog.html">
+        Перейти к соревнованиям →
+       </a>
+      </div>
+     </div>
+    </section>
+   </div>
+  </main>
+  <footer class="site-footer mt-auto">
+   <div class="container py-5">
+    <div class="row g-4 gy-5 align-items-start">
+     <div class="col-12 col-lg-5">
+      <a aria-label="CompetitionHub — на главную" class="navbar-brand d-inline-flex align-items-center gap-2 mb-3" href="index.html">
+       <img alt="" height="37" src="images/mark.svg" width="37"/>
+       <span class="text-white">
+        COMPETITION
+        <span class="brand-accent">
+         HUB
+        </span>
+       </span>
+      </a>
+      <p class="footer-intro text-white-50 small mb-4">
+       Территория соревнований. Находи интересные события, участвуй в турнирах и следи за результатами.
+      </p>
+      <a class="btn btn-outline-light btn-sm px-3" href="catalog.html">
+       Найти соревнование →
+      </a>
+     </div>
+     <div class="col-6 col-md-5 col-lg-3">
+      <h2 class="h6 text-white mb-3">
+       Платформа
+      </h2>
+      <ul class="list-unstyled footer-links">
+       <li>
+        <a href="index.html">
+         Главная
+        </a>
+       </li>
+       <li>
+        <a href="catalog.html">
+         Соревнования
+        </a>
+       </li>
+       <li>
+        <a href="bracket.html">
+         Турнирная сетка
+        </a>
+       </li>
+       <li>
+        <a href="rating.html">
+         Рейтинг
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-6 col-md-7 col-lg-4">
+      <h2 class="h6 text-white mb-3">
+       Контакты
+      </h2>
+      <ul class="list-unstyled footer-links">
+       <li>
+        <a href="mailto:contact@competitionhub.example">
+         contact@competitionhub.example
+        </a>
+       </li>
+       <li>
+        <a href="https://github.com/Hodorev-Evgeny" rel="noopener noreferrer" target="_blank">
+         GitHub
+        </a>
+       </li>
+       <li>
+        <a href="https://t.me/" rel="noopener noreferrer" target="_blank">
+         Telegram
+        </a>
+       </li>
+       <li>
+        <a href="https://vk.com/" rel="noopener noreferrer" target="_blank">
+         ВКонтакте
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <hr class="border-white border-opacity-10 my-4"/>
+    <div class="small text-white-50">
+     © 2026 CompetitionHub. Все права защищены.
+    </div>
+   </div>
+  </footer>
+  <div aria-hidden="true" aria-labelledby="createCompetitionModalLabel" class="modal fade" id="createCompetitionModal" tabindex="-1">
+   <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+     <div class="modal-header">
+      <div>
+       <span class="text-primary small fw-semibold">
+        НОВОЕ СОРЕВНОВАНИЕ
+       </span>
+       <h2 class="modal-title h4 mb-0" id="createCompetitionModalLabel">
+        Создать соревнование
+       </h2>
+      </div>
+      <button aria-label="Закрыть" class="btn-close" data-bs-dismiss="modal" type="button">
+      </button>
+     </div>
+     <form class="needs-validation" id="quickCreateForm" novalidate="">
+      <div class="modal-body">
+       <p class="text-secondary small">
+        Укажи основные условия проведения. Соревнование появится в каталоге после создания.
+       </p>
+       <div class="row g-3">
+        <div class="col-12">
+         <label class="form-label" for="quickTitle">
+          Название соревнования *
+         </label>
+         <input class="form-control" id="quickTitle" maxlength="90" minlength="5" placeholder="Например, Открытый турнир по шахматам" required=""/>
+        </div>
+        <div class="col-12 col-md-6">
+         <label class="form-label" for="quickCategory">
+          Направление *
+         </label>
+         <select class="form-select" id="quickCategory" required="">
+          <option disabled="" selected="" value="">
+           Выберите направление
+          </option>
+          <option value="sport">
+           Спорт
+          </option>
+          <option value="esport">
+           Киберспорт
+          </option>
+          <option value="intellect">
+           Интеллект
+          </option>
+          <option value="creative">
+           Творчество
+          </option>
+         </select>
+        </div>
+        <div class="col-12 col-md-6">
+         <label class="form-label" for="quickFormat">
+          Формат *
+         </label>
+         <select class="form-select" id="quickFormat" required="">
+          <option value="single">
+           Личный
+          </option>
+          <option value="team">
+           Командный
+          </option>
+         </select>
+        </div>
+        <div class="col-12 col-md-6">
+         <label class="form-label" for="quickDate">
+          Дата проведения *
+         </label>
+         <input class="form-control" id="quickDate" required="" type="date"/>
+        </div>
+        <div class="col-12 col-md-6">
+         <label class="form-label" for="quickLimit">
+          Количество мест *
+         </label>
+         <div class="input-group">
+          <span class="input-group-text">
+           до
+          </span>
+          <input class="form-control" id="quickLimit" max="500" min="2" required="" type="number" value="16"/>
+          <span class="input-group-text">
+           чел.
+          </span>
+         </div>
+        </div>
+        <div class="col-12">
+         <label class="form-label" for="quickLocation">
+          Место проведения *
+         </label>
+         <input class="form-control" id="quickLocation" maxlength="90" minlength="3" placeholder="Москва или онлайн" required=""/>
+        </div>
+        <div class="col-12">
+         <label class="form-label" for="quickDescription">
+          Описание *
+         </label>
+         <textarea class="form-control" id="quickDescription" maxlength="900" minlength="20" placeholder="Для кого подходит соревнование и что ждёт участников" required="" rows="3"></textarea>
+        </div>
+        <div class="col-12">
+         <label class="form-label" for="quickRules">
+          Правила *
+         </label>
+         <textarea class="form-control" id="quickRules" maxlength="1000" minlength="15" placeholder="Как определяются победители и какие условия участия" required="" rows="3"></textarea>
+        </div>
+        <div class="col-12">
+         <div class="form-check">
+          <input class="form-check-input" id="quickAgree" required="" type="checkbox"/>
+          <label class="form-check-label" for="quickAgree">
+           Подтверждаю корректность указанных условий *
+          </label>
+          <div class="invalid-feedback">
+           Подтверди условия проведения.
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="alert alert-danger d-none mt-3" id="quickCreateError" role="alert">
+       </div>
+      </div>
+      <div class="modal-footer">
+       <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">
+        Отмена
+       </button>
+       <button class="btn btn-primary" type="submit">
+        Опубликовать соревнование
+       </button>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+  <div aria-live="polite" class="toast-container position-fixed bottom-0 end-0 p-3">
+   <div aria-atomic="true" class="toast align-items-center text-bg-dark border-0" id="appToast" role="status">
+    <div class="d-flex">
+     <div class="toast-body" id="appToastText">
+      Готово!
+     </div>
+     <button aria-label="Закрыть" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" type="button">
+     </button>
+    </div>
+   </div>
+  </div>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="js/data.js">
+  </script>
+  <script src="js/app.js">
+  </script>
+ </body>
+</html>
